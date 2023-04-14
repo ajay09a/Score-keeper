@@ -7,6 +7,7 @@ function App() {
   const [run, setrun] = useState(0);
   const [comment, setcomment] = useState("");
   const [over, setover] = useState([]);
+  const [totalOver, settotalOver] = useState(0.0)
 
 
 
@@ -29,6 +30,21 @@ function App() {
     }
     over.unshift(<span>{`${run==="0"?"No run":run} , ${comment}`}</span>);
     setover(oldarray=>[...oldarray])
+    if(totalOver.toString().split(".")[1]==="5"){
+      const firstpart = parseInt(totalOver.toString().split(".")[0])+1;
+      settotalOver(`${firstpart}.0`)
+    }
+    else{
+      if(totalOver.toString().split(".")[1]===undefined){
+        settotalOver(totalOver+0.1)
+      }
+      else{
+        const firstpart = totalOver.toString().split(".")[0];
+        const secondpart = parseInt(totalOver.toString().split(".")[1])+1;
+        settotalOver(`${firstpart}.${secondpart}`)
+      }
+    }
+    // console.log(totalOver.toString().split(".")[1]);
   }
   const handleComment = (e)=>{
     setcomment(e.target.value)
@@ -37,6 +53,7 @@ function App() {
     <div className="App">
       <h1>Score Keeper</h1>
       <h3>Score:{score}/{wicket}</h3>
+      <h3>Over:{totalOver}</h3>
       {gameOver?(
         <h1>Game Over</h1>
       ):(
