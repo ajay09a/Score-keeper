@@ -3,16 +3,35 @@ import { useState } from 'react';
 function App() {
   const [score, setscore] = useState(0);
   const [wicket, setwicket] = useState(0);
-  const [gameOver, setgameOver] = useState(false)
+  const [gameOver, setgameOver] = useState(false);
+  const [run, setrun] = useState(0);
+  const [comment, setcomment] = useState("");
+  const [over, setover] = useState([]);
+
+
 
   const handlebutton = (e)=>{
-    const run = parseInt(e.target.innerHTML);
-    const totalrun = run+score;
-    setscore(totalrun);
+    setrun(e.target.innerHTML);
   }
   const handlewicket = (e)=>{
-    setwicket(wicket+1);
-    wicket===10?(setgameOver(true)):(setgameOver(false))
+    setrun(e.target.innerHTML);
+  }
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    if(run==="wicket"){
+      setwicket(wicket+1);
+      wicket===10?(setgameOver(true)):(setgameOver(false))
+    }
+    else{
+      const curr = parseInt(run);
+      const totalrun = curr+score;
+      setscore(totalrun);
+    }
+    over.unshift(<span>{`${run==="0"?"No run":run} , ${comment}`}</span>);
+    setover(oldarray=>[...oldarray])
+  }
+  const handleComment = (e)=>{
+    setcomment(e.target.value)
   }
   return (
     <div className="App">
@@ -22,6 +41,7 @@ function App() {
         <h1>Game Over</h1>
       ):(
       <>
+        <button onClick={handlebutton}>0</button>
         <button onClick={handlebutton}>1</button>
         <button onClick={handlebutton}>2</button>
         <button onClick={handlebutton}>3</button>
@@ -29,6 +49,18 @@ function App() {
         <button onClick={handlebutton}>5</button>
         <button onClick={handlebutton}>6</button>
         <button onClick={handlewicket}>wicket</button>
+        <br />
+        <form onSubmit={handleSubmit}>
+          <input value={run} />
+          <input onChange={handleComment} placeholder='Add a comment' />
+          <button>Submit</button>
+        </form>
+        <hr />
+        <div>
+          {over.map((res, index)=>{
+            return <p key={index+1}>{res}</p>
+          })}
+        </div>
       </>
       )}
     </div>
