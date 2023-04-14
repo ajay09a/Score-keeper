@@ -68,7 +68,7 @@ function App() {
         <button onClick={handlewicket}>wicket</button>
         <br />
         <form onSubmit={handleSubmit}>
-          <input value={run} />
+          <input value={run} readOnly />
           <input onChange={handleComment} placeholder='Add a comment' />
           <button>Submit</button>
         </form>
