@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Scorecard from './Scorecard';
 import Button from './Button';
 import Form from './Form';
 import Commentory from './Commentory'
@@ -55,8 +56,7 @@ function App() {
   return (
     <div className="App">
       <h1>Score Keeper</h1>
-      <h3>Score:{score}/{wicket}</h3>
-      <h3>Over:{totalOver}</h3>
+      <Scorecard score={score} wicket={wicket} totalOver={totalOver} />
       {gameOver?(
         <h1>Game Over</h1>
       ):(
