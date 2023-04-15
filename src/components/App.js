@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from './Button';
+import Form from './Form';
 import Commentory from './Commentory'
 
 function App() {
@@ -61,17 +62,11 @@ function App() {
       ):(
       <>
         <Button handlebutton={handlebutton}/>
-        <br />
-        <br />
-        <Commentory handleSubmit={handleSubmit} run={run} handleComment={handleComment} />
-        <hr />
-        <div>
-          {over.map((res, index)=>{
-            return <p key={index+1}>{res}</p>
-          })}
-        </div>
+        <Form handleSubmit={handleSubmit} run={run} handleComment={handleComment} />
       </>
       )}
+      <hr />
+      <Commentory over={over} />
     </div>
   );
 }

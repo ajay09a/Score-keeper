@@ -1,14 +1,12 @@
 import React from 'react'
 
-const Commentory = ({handleSubmit, run, handleComment}) => {
+const Commentory = ({over}) => {
   return (
-    <>
-        <form onSubmit={handleSubmit}>
-          <input value={run} readOnly />
-          <input onChange={handleComment} placeholder='Add a comment' />
-          <button>Submit</button>
-        </form>
-    </>
+    <div>
+          {over.map((res, index)=>{
+            return <p key={index+1}>{res}</p>
+          })}
+        </div>
   )
 }
 
