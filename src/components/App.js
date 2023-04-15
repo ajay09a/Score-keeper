@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from './Button';
 
 function App() {
   const [score, setscore] = useState(0);
@@ -58,14 +59,7 @@ function App() {
         <h1>Game Over</h1>
       ):(
       <>
-        <button onClick={handlebutton}>0</button>
-        <button onClick={handlebutton}>1</button>
-        <button onClick={handlebutton}>2</button>
-        <button onClick={handlebutton}>3</button>
-        <button onClick={handlebutton}>4</button>
-        <button onClick={handlebutton}>5</button>
-        <button onClick={handlebutton}>6</button>
-        <button onClick={handlewicket}>wicket</button>
+        <Button handlebutton={handlebutton}/>
         <br />
         <form onSubmit={handleSubmit}>
           <input value={run} readOnly />
