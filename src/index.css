@@ -11,3 +11,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin: auto;
+  font-style: oblique;
+  background: #dce7e7;
+  min-height: 100vh;
+}
+h1 {
+  text-align: center;
+  background: #5f6abbbf;
+  color: springgreen;
+}
+h3 {
+  padding-left: 20px;
+  color: #5f6abbbf;
+}
+.button-container {
+  padding-left: 20px;
+}
+button.run-button {
+  padding: 8px 14px;
+  margin: 1px;
+  margin-top: 20px;
+  border: none;
+  background: #5f6abbbf;
+  border-radius: 5px;
+  cursor: pointer;
+  color: springgreen;
+}
+form {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+input {
+  height: 3.1vh;
+  border-radius: 6px;
+  border: 1px solid #5f6abbbf;
+  padding-left: 5px;
+}
+.submit{
+  margin: 0px 13px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px;
+  background: #5f6abbbf;
+  color: springgreen;
+  font-size: inherit;
+}
+.commentory{
+  padding-left: 20px;
+}

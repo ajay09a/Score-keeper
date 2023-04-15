@@ -6,7 +6,7 @@ const Form = ({handleSubmit, run, handleComment}) => {
         <form onSubmit={handleSubmit}>
           <input value={run} readOnly />
           <input onChange={handleComment} placeholder='Add a comment' />
-          <button>Submit</button>
+          <button className='submit'>Submit</button>
         </form>
     </>
   )

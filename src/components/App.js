@@ -18,9 +18,6 @@ function App() {
   const handlebutton = (e)=>{
     setrun(e.target.innerHTML);
   }
-  const handlewicket = (e)=>{
-    setrun(e.target.innerHTML);
-  }
   const handleSubmit = (e)=>{
     e.preventDefault();
     if(run==="wicket"){
@@ -51,7 +48,7 @@ function App() {
     // console.log(totalOver.toString().split(".")[1]);
   }
   const handleComment = (e)=>{
-    setcomment(e.target.value)
+    setcomment(e.target.value);
   }
   return (
     <div className="App">
