@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from './Button';
+import Commentory from './Commentory'
 
 function App() {
   const [score, setscore] = useState(0);
@@ -61,11 +62,8 @@ function App() {
       <>
         <Button handlebutton={handlebutton}/>
         <br />
-        <form onSubmit={handleSubmit}>
-          <input value={run} readOnly />
-          <input onChange={handleComment} placeholder='Add a comment' />
-          <button>Submit</button>
-        </form>
+        <br />
+        <Commentory handleSubmit={handleSubmit} run={run} handleComment={handleComment} />
         <hr />
         <div>
           {over.map((res, index)=>{
