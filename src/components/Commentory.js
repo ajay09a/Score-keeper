@@ -5,10 +5,10 @@ const Commentory = ({over}) => {
         <div className='commentory'>
           {over.map((res, index)=>{
             return(
-              <>
+              <div key={index+1}>
                 {index%6===0?<hr />:null}
-                <p key={index+1}>{res}</p>
-              </>
+                <p>{res}</p>
+              </div>
             )
           })}
         </div>
